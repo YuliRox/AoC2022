@@ -49,7 +49,7 @@ class Program
 
     private static int Part2(PuzzleInput<SnackStash> input)
     {
-        return 0;
+        return input.Content.OrderByDescending(stash => stash.TotalCalories).Take(3).Sum(stash => stash.TotalCalories);
     }
 
     public readonly record struct SnackStash
