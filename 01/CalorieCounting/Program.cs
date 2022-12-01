@@ -44,7 +44,7 @@ class Program
 
     private static int Part1(PuzzleInput<SnackStash> input)
     {
-        return 0;
+        return input.Content.Max(x => x.TotalCalories);
     }
 
     private static int Part2(PuzzleInput<SnackStash> input)
