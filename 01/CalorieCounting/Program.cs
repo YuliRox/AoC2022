@@ -10,7 +10,7 @@ class Program
     static void Main(string[] args)
     {
 
-        var inputData = DataLoader.LoadInputData();
+        var inputData = DataLoader.LoadInputData<SnackStash>();
 
         foreach (var inputSet in inputData)
         {
@@ -43,5 +43,16 @@ class Program
     private static int Part2(PuzzleInput<string> input)
     {
         return 0;
+    }
+
+    public readonly record struct SnackStash {
+        public SnackStash(int[] snacks, int totalCalories)
+        {
+            Snacks = snacks;
+            TotalCalories = Snacks.Sum();
+        }
+
+        public readonly int[] Snacks { get; init; }
+        public int TotalCalories { get; init; }
     }
 }
