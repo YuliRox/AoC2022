@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CalorieCounting": {
+      "commandName": "Project",
+      "workingDirectory": "..\\"
+    }
+  }
+}
