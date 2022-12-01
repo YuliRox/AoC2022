@@ -9,8 +9,15 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        var inputData = DataLoader.LoadInputData<SnackStash>();
+        var inputData = DataLoader.LoadAllRawInputData<SnackStash>(content => content
+            .Split("\r\n\r\n")
+            .Select(group => group
+                .Split("\r\n")
+                .Select(int.Parse)
+                .ToArray()
+            )
+            .Select(group => new SnackStash(group))
+            );
 
         foreach (var inputSet in inputData)
         {
@@ -35,18 +42,19 @@ class Program
         }
     }
 
-    private static int Part1(PuzzleInput<string> input)
+    private static int Part1(PuzzleInput<SnackStash> input)
     {
         return 0;
     }
 
-    private static int Part2(PuzzleInput<string> input)
+    private static int Part2(PuzzleInput<SnackStash> input)
     {
         return 0;
     }
 
-    public readonly record struct SnackStash {
-        public SnackStash(int[] snacks, int totalCalories)
+    public readonly record struct SnackStash
+    {
+        public SnackStash(int[] snacks)
         {
             Snacks = snacks;
             TotalCalories = Snacks.Sum();

@@ -59,7 +59,7 @@ namespace Shared
                 .ToList();
         }
 
-        public static List<PuzzleInput<T>> LoadAllRawInputData<T>(Func<string, IEnumerable<T>> contentModificationFunction, string seperator)
+        public static List<PuzzleInput<T>> LoadAllRawInputData<T>(Func<string, IEnumerable<T>> contentModificationFunction)
         {
             return ForInputFiles()
                 .Select(fileInfo => new PuzzleInput<T>(
