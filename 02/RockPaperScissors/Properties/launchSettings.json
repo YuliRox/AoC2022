@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RockPaperScissors": {
+      "commandName": "Project",
+      "workingDirectory": "..\\"
+    }
+  }
+}
