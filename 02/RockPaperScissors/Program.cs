@@ -66,7 +66,7 @@ class Program
         "A" or "X" => Symbol.Rock,
         "B" or "Y" => Symbol.Paper,
         "C" or "Z" => Symbol.Scissors,
-        _ => throw new ArgumentException(nameof(rawInput))
+        _ => throw new ArgumentException("Invalid input symbol", nameof(rawInput))
     };
 
     public enum Symbol
@@ -90,7 +90,6 @@ class Program
         {
             if (round.OwnChoice == round.OpponentChoice)
             {
-                Console.WriteLine($"Draw (you:{round.OwnChoice}, opponent:{round.OpponentChoice}): {(int)GameResult.Draw} + {(int)round.OwnChoice} = {(int)GameResult.Draw + (int)round.OwnChoice}");
                 return (int)GameResult.Draw + (int)round.OwnChoice;
             }
             else if (
@@ -99,18 +98,12 @@ class Program
                 (round.OwnChoice == Symbol.Paper && round.OpponentChoice == Symbol.Rock)
             )
             {
-                Console.WriteLine($"Won (you:{round.OwnChoice}, opponent:{round.OpponentChoice}) {(int)GameResult.Won} + {(int)round.OwnChoice} = {(int)GameResult.Won + (int)round.OwnChoice}");
                 return (int)GameResult.Won + (int)round.OwnChoice;
             }
             else
             {
-                Console.WriteLine($"Lost(you:{round.OwnChoice}, opponent:{round.OpponentChoice}): {(int)GameResult.Lost} + {(int)round.OwnChoice} = {(int)GameResult.Lost + (int)round.OwnChoice}");
                 return (int)GameResult.Lost + (int)round.OwnChoice;
             }
-
         }
-
-
     }
-
 }
