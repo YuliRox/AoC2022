@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.Unicode;
 using Shared;
 
 namespace RucksackReorganization;
@@ -11,8 +9,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine('a' + 'a');
-
         var inputData = DataLoader.LoadInputData(line => new Rucksack(line));
 
         foreach (var inputSet in inputData)
