@@ -11,7 +11,8 @@ namespace Shared
         {
             return Directory.GetFiles(@"./input", "*.txt")
                 .Select(filePath => new FileInfo(filePath))
-                .Where(fileInfo => fileInfo.Name.Contains('_'));
+                .Where(fileInfo => fileInfo.Name.Contains('_'))
+                .Where(fileInfo => fileInfo.Length > 0);
         }
 
         private static string GetInputName(FileInfo fileInfo)
