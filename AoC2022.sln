@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02", "02", "{21603C65-224E-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors", "02\RockPaperScissors\RockPaperScissors.csproj", "{99B7CFC8-F045-4E9F-8E30-3B43FB3DC99F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03", "03", "{765E5337-47EC-42A9-B46A-BF11A5F0108C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RucksackReorganization", "03\RucksackReorganization\RucksackReorganization.csproj", "{A2CBCD3A-0773-48F6-B59D-A2AB0721135A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{99B7CFC8-F045-4E9F-8E30-3B43FB3DC99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99B7CFC8-F045-4E9F-8E30-3B43FB3DC99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99B7CFC8-F045-4E9F-8E30-3B43FB3DC99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2CBCD3A-0773-48F6-B59D-A2AB0721135A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2CBCD3A-0773-48F6-B59D-A2AB0721135A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2CBCD3A-0773-48F6-B59D-A2AB0721135A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2CBCD3A-0773-48F6-B59D-A2AB0721135A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F5A7D9DD-1FA9-4591-B37A-BF1F4147BAD4} = {BDA606C7-B1C2-4713-BE98-81A2605EC0E6}
 		{99B7CFC8-F045-4E9F-8E30-3B43FB3DC99F} = {21603C65-224E-48F5-BD61-BC86EB556F8B}
+		{A2CBCD3A-0773-48F6-B59D-A2AB0721135A} = {765E5337-47EC-42A9-B46A-BF11A5F0108C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6FADD7F-838C-44CA-A45D-892D3299314C}

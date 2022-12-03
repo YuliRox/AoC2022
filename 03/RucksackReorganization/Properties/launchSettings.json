@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RucksackReorganization": {
+      "commandName": "Project",
+      "workingDirectory": "..\\"
+    }
+  }
+}
