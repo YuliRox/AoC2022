@@ -51,7 +51,7 @@ class Program
 
     public readonly record struct Round
     {
-        public Round(Symbol ownChoice, Symbol opponentChoice)
+        public Round(Symbol opponentChoice, Symbol ownChoice)
         {
             OwnChoice = ownChoice;
             OpponentChoice = opponentChoice;
@@ -76,30 +76,40 @@ class Program
         Scissors = 3
     }
 
-    public enum GameResult{
+    public enum GameResult
+    {
         Lost = 0,
         Draw = 3,
         Won = 6
     }
 
-    public static class GameSolver {
+    public static class GameSolver
+    {
 
-        public static int ResolveRound(Round round){
-            if (round.OwnChoice == round.OpponentChoice) {
-                return (int) GameResult.Draw + (int) round.OwnChoice;
+        public static int ResolveRound(Round round)
+        {
+            if (round.OwnChoice == round.OpponentChoice)
+            {
+                Console.WriteLine($"Draw (you:{round.OwnChoice}, opponent:{round.OpponentChoice}): {(int)GameResult.Draw} + {(int)round.OwnChoice} = {(int)GameResult.Draw + (int)round.OwnChoice}");
+                return (int)GameResult.Draw + (int)round.OwnChoice;
             }
             else if (
                 (round.OwnChoice == Symbol.Rock && round.OpponentChoice == Symbol.Scissors) ||
                 (round.OwnChoice == Symbol.Scissors && round.OpponentChoice == Symbol.Paper) ||
                 (round.OwnChoice == Symbol.Paper && round.OpponentChoice == Symbol.Rock)
-            ){
+            )
+            {
+                Console.WriteLine($"Won (you:{round.OwnChoice}, opponent:{round.OpponentChoice}) {(int)GameResult.Won} + {(int)round.OwnChoice} = {(int)GameResult.Won + (int)round.OwnChoice}");
                 return (int)GameResult.Won + (int)round.OwnChoice;
-            } else {
+            }
+            else
+            {
+                Console.WriteLine($"Lost(you:{round.OwnChoice}, opponent:{round.OpponentChoice}): {(int)GameResult.Lost} + {(int)round.OwnChoice} = {(int)GameResult.Lost + (int)round.OwnChoice}");
                 return (int)GameResult.Lost + (int)round.OwnChoice;
             }
 
         }
-    
+
 
     }
 
