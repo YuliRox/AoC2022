@@ -49,7 +49,30 @@ class Program
 
     private static int Part2(PuzzleInput<Rucksack> input)
     {
-        return 0;
+        var translator = new PriorityTranslator();
+        return input.Content
+            .Chunk(3)
+            .Select(FindBadge)
+            .Select(translator.GetPriority)
+            .Sum();
+    }
+
+    private static char FindBadge(Rucksack[] rucksacks)
+    {
+        if (rucksacks.Length != 3)
+            throw new ArgumentOutOfRangeException(nameof(rucksacks));
+
+        var orderedRucksacks = rucksacks.OrderBy(x => x.Items.Length);
+        var smallestRucksack = orderedRucksacks.First();
+        var remainingRucksacks = orderedRucksacks.Skip(1).ToArray();
+
+        foreach (var item in smallestRucksack.Items)
+        {
+            if (remainingRucksacks.All(rucksack => rucksack.UniqueItems.Contains(item)))
+                return item;
+        }
+
+        throw new InvalidOperationException("Rucksacks dont contain a badge");
     }
 }
 
@@ -59,6 +82,7 @@ readonly record struct Rucksack
     public ReadOnlyMemory<char> ItemList { get; init; }
     public ReadOnlyMemory<char> FirstCompartment { get; init; }
     public ReadOnlyMemory<char> SecondCompartment { get; init; }
+    public HashSet<char> UniqueItems { get; init; }
 
     public Rucksack(string itemList)
     {
@@ -67,6 +91,8 @@ readonly record struct Rucksack
         var midPoint = ItemList.Length / 2;
         FirstCompartment = ItemList[0..midPoint];
         SecondCompartment = ItemList[midPoint..];
+
+        UniqueItems = Items.ToHashSet();
     }
 
     public char FindDuplicateItem()
