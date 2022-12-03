@@ -45,14 +45,6 @@ class Program
             .Select(x => x.FindDuplicateItem())
             .Select(translator.GetPriority)
             .Sum();
-
-        foreach (var rucksack in input.Content)
-        {
-            var item = rucksack.FindDuplicateItem();
-            var priority = (int)item;
-        }
-
-        return 0;
     }
 
     private static int Part2(PuzzleInput<Rucksack> input)
