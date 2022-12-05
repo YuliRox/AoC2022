@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CampCleanup": {
+      "commandName": "Project",
+      "workingDirectory": "..\\"
+    }
+  }
+}
